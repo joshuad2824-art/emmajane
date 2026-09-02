@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.storage
+.env
+.env.*
+design_handoff_emma_jane_photography
+README.md
