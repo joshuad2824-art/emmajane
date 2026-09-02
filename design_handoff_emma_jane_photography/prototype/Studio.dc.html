@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/effects.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/styles.css">
+<script src="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/_ds_bundle.js"></script>
+<script src="./cms.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--color-bg); }
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-hover); }
+  img { display: block; }
+  @media (max-width: 900px) {
+    nav { padding: 10px 18px !important; flex-wrap: wrap; justify-content: center !important; gap: 6px !important; }
+    nav > div { gap: 16px !important; flex-wrap: wrap; justify-content: center; }
+    header, section, footer { padding-left: 22px !important; padding-right: 22px !important; }
+    section { padding-top: 40px !important; padding-bottom: 56px !important; }
+    h1 { font-size: 2.5rem !important; }
+    [data-fields] { grid-template-columns: 1fr !important; }
+    [data-row] { flex-direction: column !important; align-items: flex-start !important; }
+    p { max-width: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overflow-x: hidden; min-height: 100vh;">
+
+  <nav style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 48px; background: color-mix(in srgb, var(--warm-ivory) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border-soft);">
+    <a href="Home.dc.html" style="display: block; flex-shrink: 0;"><img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 52px; width: auto;"></a>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <a href="Home.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Home</a>
+      <a href="Galleries.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Galleries</a>
+      <a href="Client Gallery.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Client access</a>
+      <a href="Studio.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-accent); padding-bottom: 4px;">Studio</a>
+    </div>
+  </nav>
+
+  <sc-if value="{{ notAdmin }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Studio — signed out" style="padding: 110px 48px 140px; max-width: 720px; margin: 0 auto;">
+    <p style="margin: 0 0 18px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">for Emma only</p>
+    <h1 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 3.4rem; line-height: var(--leading-tight); text-wrap: balance;">The studio is behind a word</h1>
+    <p style="margin: 26px 0 0; font-size: var(--text-body); line-height: var(--leading-relaxed);">Sign in with the small <strong>Admin</strong> control at the very bottom of any page, and this becomes the place where galleries are made — your own collections, and a private gallery for each client with its own word and link.</p>
+    <p style="margin: 18px 0 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wide); color: var(--color-text-muted);">Nothing here is public. No client name, no photograph, no word.</p>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ admin }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Studio">
+    <header style="padding: 68px 48px 26px; max-width: 1180px; margin: 0 auto;">
+      <p style="margin: 0 0 14px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">good morning, Emma</p>
+      <h1 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 3.6rem; line-height: var(--leading-tight);">The studio</h1>
+      <div style="margin-top: 32px; display: flex; gap: 28px; align-items: center; border-bottom: 1px solid var(--color-border-soft);">
+        <button type="button" onClick="{{ toMine }}" style="background: none; border: 0; padding: 12px 0; cursor: pointer; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: {{ mineFg }}; border-bottom: 2px solid {{ mineBd }};">My galleries</button>
+        <button type="button" onClick="{{ toClients }}" style="background: none; border: 0; padding: 12px 0; cursor: pointer; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: {{ cliFg }}; border-bottom: 2px solid {{ cliBd }};">Client galleries</button>
+      </div>
+      <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;">
+        <p style="margin: 0; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">{{ countLine }}</p>
+        <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="primary" onClick="{{ onNew }}" hint-size="180px,48px">{{ newLabel }}</x-import>
+      </div>
+      <p style="margin: 18px 0 0; min-height: 26px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-accent);">{{ toast }}</p>
+    </header>
+
+    <sc-if value="{{ listing }}" hint-placeholder-val="{{ true }}">
+    <section style="padding: 0 48px 140px; max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;">
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="3">
+        <div data-row="" style="background: var(--color-surface); border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); box-shadow: var(--shadow-card); padding: 22px 26px; display: flex; flex-wrap: wrap; gap: 22px; align-items: center;">
+          <img src="{{ r.cover }}" alt="" style="width: 92px; height: 92px; object-fit: cover; border-radius: var(--radius-sm); background: var(--color-surface-sunken); flex-shrink: 0;">
+          <div style="flex: 1 1 240px; min-width: 0;">
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline;">
+              <h2 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4); line-height: var(--leading-snug);">{{ r.name }}</h2>
+              <span style="padding: 4px 11px; border-radius: var(--radius-sm); background: {{ r.badgeBg }}; color: {{ r.badgeFg }}; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase;">{{ r.badge }}</span>
+            </div>
+            <p style="margin: 8px 0 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wide); color: var(--color-text-muted);">{{ r.meta }}</p>
+            <p style="margin: 6px 0 0; font-family: var(--font-hand); font-size: 1.15rem; color: var(--color-accent);">{{ r.sub }}</p>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center; flex-shrink: 0;">
+            <button type="button" onClick="{{ r.onUp }}" title="Show earlier" style="width: 36px; min-height: 40px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: transparent; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); color: var(--color-text);" style-hover="border-color: var(--color-accent); color: var(--color-accent);">↑</button>
+            <button type="button" onClick="{{ r.onDown }}" title="Show later" style="width: 36px; min-height: 40px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: transparent; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); color: var(--color-text);" style-hover="border-color: var(--color-accent); color: var(--color-accent);">↓</button>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; flex-shrink: 0;">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="secondary" onClick="{{ r.onEdit }}" hint-size="96px,44px">Edit</x-import>
+            <button type="button" onClick="{{ r.onSecondary }}" style="background: none; border: 0; padding: 8px 4px; cursor: pointer; white-space: nowrap; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);" style-hover="color: var(--color-accent);">{{ r.secondaryLabel }}</button>
+            <button type="button" onClick="{{ r.onDelete }}" style="background: none; border: 0; padding: 8px 4px; cursor: pointer; white-space: nowrap; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: #7b4a3a;" style-hover="color: #5d372a;">{{ r.deleteLabel }}</button>
+          </div>
+        </div>
+      </sc-for>
+      <sc-if value="{{ noRows }}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 0; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">Nothing here yet. Plenty of time.</p>
+      </sc-if>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
+    <section style="padding: 0 48px 150px; max-width: 1180px; margin: 0 auto;">
+      <div style="background: var(--color-surface); border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); box-shadow: var(--shadow-card); padding: 40px 38px 44px;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; justify-content: space-between;">
+          <h2 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h3); line-height: var(--leading-snug);">{{ formTitle }}</h2>
+          <p style="margin: 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">{{ formStamp }}</p>
+        </div>
+
+        <div data-fields="" style="margin-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 30px;">
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="{{ nameLabel }}" placeholder="{{ namePlaceholder }}" value="{{ fName }}" onChange="{{ onName }}" error="{{ errName }}" hint-size="100%,86px"></x-import>
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="{{ subLabel }}" placeholder="{{ subPlaceholder }}" value="{{ fSub }}" onChange="{{ onSub }}" error="{{ errSub }}" hint-size="100%,86px"></x-import>
+          <sc-if value="{{ isClient }}" hint-placeholder-val="{{ false }}">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="Photographed on" type="date" value="{{ fShot }}" onChange="{{ onShot }}" hint-size="100%,86px"></x-import>
+          </sc-if>
+          <sc-if value="{{ isClient }}" hint-placeholder-val="{{ false }}">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="Files here until" type="date" value="{{ fUntil }}" onChange="{{ onUntil }}" hint-size="100%,86px"></x-import>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ isClient }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 26px;">
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Textarea" label="A note at the bottom of their gallery" placeholder="Mark the ones you would like printed and I will get them ordered." value="{{ fNote }}" onChange="{{ onNote }}" rows="{{ 3 }}" hint-size="100%,140px"></x-import>
+        </div>
+        <div style="margin-top: 18px; padding: 18px 20px; background: var(--color-bg-alt); border-radius: var(--radius-sm);">
+          <p style="margin: 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">The link you send them</p>
+          <p style="margin: 8px 0 0; font-size: var(--text-body); color: var(--color-text); word-break: break-all;">{{ shareLink }}</p>
+        </div>
+        </sc-if>
+
+        <div style="margin-top: 34px;">
+          <p style="margin: 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">Photographs</p>
+          <div onDrop="{{ onDrop }}" onDragOver="{{ onDragOver }}" style="margin-top: 12px; padding: 30px 26px; border: 1px dashed var(--color-border); border-radius: var(--radius-sm); background: var(--color-surface-paper); display: flex; flex-wrap: wrap; gap: 18px 24px; align-items: center; justify-content: space-between;">
+            <div style="min-width: 0;">
+              <p style="margin: 0; font-family: var(--font-hand); font-size: 1.35rem; color: var(--color-text);">{{ dropLine }}</p>
+              <p style="margin: 8px 0 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wide); color: var(--color-text-muted);">Full-size files off the card are fine — the web sizes get made for you.</p>
+            </div>
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="secondary" size="lg" onClick="{{ openPicker }}" hint-size="180px,54px">Choose files</x-import>
+            <input type="file" multiple="{{ true }}" accept="image/*" ref="{{ fileRef }}" onChange="{{ onFiles }}" style="display: none;"/>
+          </div>
+
+          <sc-if value="{{ busy }}" hint-placeholder-val="{{ false }}">
+            <p style="margin: 14px 0 0; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">{{ busyLine }}</p>
+          </sc-if>
+
+          <sc-if value="{{ hasPhotos }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top: 8px;">
+            <sc-for list="{{ photos }}" as="p" hint-placeholder-count="3">
+              <div data-row="" style="padding: 18px 0; border-top: 1px solid var(--color-border-soft); display: flex; flex-wrap: wrap; gap: 16px 18px; align-items: center;">
+                <img src="{{ p.src }}" alt="" style="width: 74px; height: 74px; object-fit: cover; border-radius: var(--radius-sm); background: var(--color-surface-sunken); flex-shrink: 0;">
+                <div style="flex: 1 1 220px; min-width: 0;">
+                  <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" placeholder="a line in your hand, if it wants one" value="{{ p.cap }}" onChange="{{ p.onCap }}" hint-size="100%,50px"></x-import>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; flex-shrink: 0;">
+                  <sc-if value="{{ p.showCover }}" hint-placeholder-val="{{ true }}">
+                    <button type="button" onClick="{{ p.onCover }}" title="Use as the cover" style="min-height: 40px; padding: 0 14px; border-radius: var(--radius-sm); cursor: pointer; white-space: nowrap; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; border: 1px solid {{ p.coverBd }}; background: {{ p.coverBg }}; color: {{ p.coverFg }};">Cover</button>
+                  </sc-if>
+                  <button type="button" onClick="{{ p.onUp }}" title="Move earlier" style="width: 36px; min-height: 40px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: transparent; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); color: var(--color-text);" style-hover="border-color: var(--color-accent); color: var(--color-accent);">‹</button>
+                  <button type="button" onClick="{{ p.onDown }}" title="Move later" style="width: 36px; min-height: 40px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: transparent; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); color: var(--color-text);" style-hover="border-color: var(--color-accent); color: var(--color-accent);">›</button>
+                  <button type="button" onClick="{{ p.onRemove }}" title="Take this one out" style="width: 36px; min-height: 40px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: transparent; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); color: #7b4a3a;" style-hover="border-color: #7b4a3a;">×</button>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          </sc-if>
+        </div>
+
+        <div style="margin-top: 38px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="primary" size="lg" onClick="{{ onSave }}" hint-size="180px,54px">{{ saveLabel }}</x-import>
+          <sc-if value="{{ isAlbum }}" hint-placeholder-val="{{ true }}">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="secondary" size="lg" onClick="{{ onToggleLive }}" hint-size="180px,54px">{{ liveLabel }}</x-import>
+          </sc-if>
+          <button type="button" onClick="{{ onCancel }}" style="min-height: 54px; padding: 0 8px; background: none; border: 0; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); letter-spacing: var(--tracking-wide); color: var(--color-text-muted);" style-hover="color: var(--color-text);">Never mind</button>
+        </div>
+      </div>
+    </section>
+    </sc-if>
+  </div>
+  </sc-if>
+
+  <footer style="background: var(--pine-green); color: var(--color-text-inverse); padding: 60px 40px 34px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
+    <img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 70px; width: auto; filter: brightness(0) invert(1); opacity: 0.92;">
+    <p style="margin: -6px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.15rem; opacity: 0.88;">collect beautiful moments</p>
+    <span style="font-size: var(--text-eyebrow); opacity: 0.55; letter-spacing: var(--tracking-wide);">Tulsa, Oklahoma &amp; surrounding areas &middot; &copy; 2026 Emma Jane Photography</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    admin: false, ready: false, tab: "mine",
+    albums: [], clients: [],
+    editing: false, editId: null,
+    form: null, errName: "", errSub: "",
+    srcs: {}, toast: "", busy: 0, confirm: null
+  };
+
+  componentDidMount() {
+    let tries = 0;
+    const go = () => {
+      if (!window.EJ) { if (++tries < 60) this.timer = setTimeout(go, 80); return; }
+      this.setState({
+        admin: window.EJ.isAdmin(), ready: true,
+        albums: window.EJ.albums(), clients: window.EJ.clients()
+      }, () => this.resolveAll());
+    };
+    go();
+    this.poll = setInterval(() => {
+      if (window.EJ && window.EJ.isAdmin() !== this.state.admin) this.setState({ admin: window.EJ.isAdmin() });
+    }, 1200);
+  }
+  componentWillUnmount() {
+    if (this.timer) clearTimeout(this.timer);
+    if (this.t) clearTimeout(this.t);
+    clearInterval(this.poll);
+  }
+
+  resolveAll() {
+    const jobs = [];
+    const seen = {};
+    const add = p => {
+      const k = p.id || p.file;
+      if (!k || seen[k] || this.state.srcs[k]) return;
+      seen[k] = 1;
+      jobs.push(window.EJ.srcOf(p, "thumb").then(u => ({ k, u })));
+    };
+    this.state.albums.forEach(a => a.photos.forEach(add));
+    this.state.clients.forEach(c => c.photos.forEach(add));
+    if (this.state.form) this.state.form.photos.forEach(add);
+    if (!jobs.length) return;
+    Promise.all(jobs).then(rows => {
+      this.setState(s => {
+        const srcs = { ...s.srcs };
+        rows.forEach(r => { if (r.u) srcs[r.k] = r.u; });
+        return { srcs };
+      });
+    });
+  }
+
+  src(p) {
+    if (!p) return "";
+    const k = p.id || p.file;
+    return this.state.srcs[k] || (p.file || "");
+  }
+
+  say(msg) {
+    this.setState({ toast: msg });
+    if (this.t) clearTimeout(this.t);
+    this.t = setTimeout(() => this.setState({ toast: "" }), 4200);
+  }
+
+  iso(d) { return d.toISOString().slice(0, 10); }
+  plusDays(n) { const d = new Date(); d.setDate(d.getDate() + n); return this.iso(d); }
+  pretty(s) {
+    if (!s) return "no date yet";
+    const [y, m, d] = s.split("-").map(Number);
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return months[m - 1] + " " + d + ", " + y;
+  }
+  expired(s) { return !!s && s < this.iso(new Date()); }
+
+  persist(patch) {
+    this.setState(patch, () => {
+      if (patch.albums) window.EJ.saveAlbums(this.state.albums);
+      if (patch.clients) window.EJ.saveClients(this.state.clients);
+    });
+  }
+
+  blank() {
+    return this.state.tab === "mine"
+      ? { name: "", sub: "", live: false, cover: 0, photos: [] }
+      : { name: "", sub: "", shot: this.iso(new Date()), until: this.plusDays(90),
+          note: "Mark the ones you would like printed and I will get them ordered. The full-size files are yours to keep.", photos: [] };
+  }
+
+  addFiles(list) {
+    const files = Array.from(list || []).filter(f => f.type.indexOf("image/") === 0);
+    if (!files.length || !this.state.form) return;
+    this.setState(s => ({ busy: s.busy + files.length }));
+    files.reduce((chain, f) => chain.then(() => window.EJ.addPhoto(f).then(rec => {
+      this.setState(s => ({
+        busy: Math.max(0, s.busy - 1),
+        form: s.form ? { ...s.form, photos: s.form.photos.concat([{ id: rec.id, name: rec.name, cap: "" }]) } : s.form
+      }), () => this.resolveAll());
+    }).catch(() => this.setState(s => ({ busy: Math.max(0, s.busy - 1) })))), Promise.resolve())
+      .then(() => this.say(files.length + (files.length === 1 ? " photograph added." : " photographs added.")));
+  }
+
+  setPhoto(i, patch) {
+    this.setState(s => {
+      const photos = s.form.photos.slice();
+      photos[i] = { ...photos[i], ...patch };
+      return { form: { ...s.form, photos } };
+    });
+  }
+  movePhoto(i, dir) {
+    this.setState(s => {
+      const photos = s.form.photos.slice();
+      const j = i + dir;
+      if (j < 0 || j >= photos.length) return null;
+      const tmp = photos[i]; photos[i] = photos[j]; photos[j] = tmp;
+      let cover = s.form.cover;
+      if (cover === i) cover = j; else if (cover === j) cover = i;
+      return { form: { ...s.form, photos, cover } };
+    });
+  }
+  removeAt(i) {
+    this.setState(s => {
+      const p = s.form.photos[i];
+      if (p && p.id) window.EJ.removePhoto(p.id);
+      const photos = s.form.photos.filter((_, j) => j !== i);
+      const cover = Math.min(s.form.cover || 0, Math.max(0, photos.length - 1));
+      return { form: { ...s.form, photos, cover } };
+    });
+  }
+
+  move(id, dir) {
+    const mine = this.state.tab === "mine";
+    const list = (mine ? this.state.albums : this.state.clients).slice();
+    const i = list.findIndex(x => x.id === id);
+    const j = i + dir;
+    if (i < 0 || j < 0 || j >= list.length) return;
+    const tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+    this.persist(mine ? { albums: list } : { clients: list });
+  }
+
+  save() {
+    const mine = this.state.tab === "mine";
+    const f = this.state.form;
+    const errName = f.name.trim() ? "" : (mine ? "A gallery needs a name." : "A name helps you find it again.");
+    const errSub = (mine || f.sub.trim()) ? "" : "They will need a word to get in.";
+    if (errName || errSub) { this.setState({ errName, errSub }); return; }
+
+    const list = (mine ? this.state.albums : this.state.clients).slice();
+    const rec = mine
+      ? { name: f.name.trim(), note: f.sub.trim(), live: !!f.live, cover: f.cover || 0, photos: f.photos }
+      : { name: f.name.trim(), code: f.sub.trim().toLowerCase(), shot: f.shot, until: f.until, note: f.note, photos: f.photos };
+
+    const wasEdit = !!this.state.editId;
+    if (wasEdit) {
+      const i = list.findIndex(x => x.id === this.state.editId);
+      if (i > -1) list[i] = { ...list[i], ...rec };
+    } else {
+      list.unshift({ ...rec, id: (mine ? "a" : "c") + Date.now().toString(36) });
+    }
+    this.setState({ editing: false, editId: null, form: null, errName: "", errSub: "" });
+    this.persist(mine ? { albums: list } : { clients: list });
+    this.say(wasEdit ? "Saved." : (mine ? (rec.live ? "Saved, and it is on the site." : "Saved as a draft — nobody sees it yet.") : "Saved. Send them the link when you are ready."));
+  }
+
+  remove(id) {
+    const mine = this.state.tab === "mine";
+    const list = (mine ? this.state.albums : this.state.clients).filter(x => x.id !== id);
+    this.setState({ confirm: null });
+    this.persist(mine ? { albums: list } : { clients: list });
+    this.say(mine ? "Gallery taken down." : "Gallery taken down. The word no longer opens anything.");
+  }
+
+  renderVals() {
+    const st = this.state;
+    const mine = st.tab === "mine";
+    const list = mine ? st.albums : st.clients;
+
+    const rows = list.map(x => {
+      const gone = !mine && this.expired(x.until);
+      const confirming = st.confirm === x.id;
+      return {
+        key: x.id,
+        cover: this.src(x.photos[mine ? (x.cover || 0) : 0] || x.photos[0]),
+        name: x.name,
+        badge: mine ? (x.live ? "On the site" : "Draft") : (gone ? "Closed" : "Open"),
+        badgeBg: (mine ? x.live : !gone) ? "var(--color-accent-soft)" : "var(--color-surface-sunken)",
+        badgeFg: (mine ? x.live : !gone) ? "var(--color-accent)" : "var(--color-text-muted)",
+        meta: x.photos.length + (x.photos.length === 1 ? " photograph" : " photographs") +
+          (mine ? (x.note ? " · " + x.note : "") : " · photographed " + this.pretty(x.shot) + " · here until " + this.pretty(x.until)),
+        sub: mine ? "" : "the word is " + (x.code || "—"),
+        onUp: () => this.move(x.id, -1),
+        onDown: () => this.move(x.id, 1),
+        onEdit: () => {
+          const form = mine
+            ? { name: x.name, sub: x.note || "", live: !!x.live, cover: x.cover || 0, photos: x.photos.map(p => ({ ...p })) }
+            : { name: x.name, sub: x.code || "", shot: x.shot || "", until: x.until || "", note: x.note || "", photos: x.photos.map(p => ({ ...p })) };
+          this.setState({ editing: true, editId: x.id, form, errName: "", errSub: "", confirm: null }, () => {
+            this.resolveAll();
+            window.scrollTo(0, 0);
+          });
+        },
+        secondaryLabel: mine ? (x.live ? "Take off the site" : "Put it on the site") : "Copy the link",
+        onSecondary: () => {
+          if (mine) {
+            const next = st.albums.map(a => a.id === x.id ? { ...a, live: !a.live } : a);
+            this.persist({ albums: next });
+            this.say(x.live ? x.name + " is off the site." : x.name + " is on the site.");
+          } else {
+            const link = location.origin + location.pathname.replace(/[^/]*$/, "") + "Client%20Gallery.dc.html?g=" + (x.code || "");
+            if (navigator.clipboard) navigator.clipboard.writeText(link).catch(() => {});
+            this.say("Link copied — it opens their gallery without the word.");
+          }
+        },
+        deleteLabel: confirming ? "Yes, take it down" : "Delete",
+        onDelete: () => { if (confirming) this.remove(x.id); else this.setState({ confirm: x.id }); }
+      };
+    });
+
+    const f = st.form;
+    const photos = f ? f.photos.map((p, i) => ({
+      key: (p.id || p.file) + i,
+      src: this.src(p),
+      cap: p.cap || "",
+      showCover: mine,
+      coverBg: (f.cover || 0) === i ? "var(--pine-green)" : "transparent",
+      coverFg: (f.cover || 0) === i ? "var(--color-text-inverse)" : "var(--color-text-muted)",
+      coverBd: (f.cover || 0) === i ? "var(--pine-green)" : "var(--color-border)",
+      onCap: e => this.setPhoto(i, { cap: e.target.value }),
+      onCover: () => this.setState(s => ({ form: { ...s.form, cover: i } })),
+      onUp: () => this.movePhoto(i, -1),
+      onDown: () => this.movePhoto(i, 1),
+      onRemove: () => this.removeAt(i)
+    })) : [];
+
+    const liveCount = st.albums.filter(a => a.live).length;
+    const openCount = st.clients.filter(c => !this.expired(c.until)).length;
+
+    return {
+      admin: st.admin && st.ready,
+      notAdmin: st.ready && !st.admin,
+      mineFg: mine ? "var(--color-accent)" : "var(--color-text-muted)",
+      mineBd: mine ? "var(--color-accent)" : "transparent",
+      cliFg: mine ? "var(--color-text-muted)" : "var(--color-accent)",
+      cliBd: mine ? "transparent" : "var(--color-accent)",
+      toMine: () => this.setState({ tab: "mine", editing: false, editId: null, form: null, confirm: null }),
+      toClients: () => this.setState({ tab: "clients", editing: false, editId: null, form: null, confirm: null }),
+      countLine: mine
+        ? (st.albums.length ? liveCount + " on the site" + (st.albums.length - liveCount ? " · " + (st.albums.length - liveCount) + " still a draft" : "") + " — top of the list shows first" : "no galleries yet")
+        : (st.clients.length ? openCount + " open" + (st.clients.length - openCount ? " · " + (st.clients.length - openCount) + " closed" : "") : "no client galleries yet"),
+      newLabel: mine ? "New gallery" : "New client gallery",
+      onNew: () => this.setState({ editing: true, editId: null, form: this.blank(), errName: "", errSub: "", confirm: null }),
+      toast: st.toast,
+
+      listing: !st.editing,
+      editing: st.editing && !!f,
+      rows, noRows: rows.length === 0,
+
+      isAlbum: mine, isClient: !mine,
+      formTitle: st.editId ? "Editing " + ((f && f.name) || "a gallery") : (mine ? "A new gallery" : "A new client gallery"),
+      formStamp: st.editId ? "Saved changes go live at once" : "Nobody sees this until you save",
+      nameLabel: mine ? "Gallery name" : "Client name",
+      namePlaceholder: mine ? "Families, at home" : "The Hartleys",
+      subLabel: mine ? "The line under the title" : "The word that opens it",
+      subPlaceholder: mine ? "Tulsa · morning light" : "goldenfield",
+      fName: f ? f.name : "", fSub: f ? f.sub : "",
+      fShot: f ? (f.shot || "") : "", fUntil: f ? (f.until || "") : "", fNote: f ? (f.note || "") : "",
+      errName: st.errName, errSub: st.errSub,
+      onName: e => this.setState(s => ({ form: { ...s.form, name: e.target.value }, errName: "" })),
+      onSub: e => this.setState(s => ({ form: { ...s.form, sub: e.target.value }, errSub: "" })),
+      onShot: e => this.setState(s => ({ form: { ...s.form, shot: e.target.value } })),
+      onUntil: e => this.setState(s => ({ form: { ...s.form, until: e.target.value } })),
+      onNote: e => this.setState(s => ({ form: { ...s.form, note: e.target.value } })),
+      shareLink: f && !mine ? "emmajanephoto.com/client-gallery?g=" + ((f.sub || "your-word").toLowerCase()) : "",
+
+      photos, hasPhotos: photos.length > 0,
+      dropLine: photos.length ? "Drop more in — they land at the end." : "Drag photographs here from your computer.",
+      busy: st.busy > 0,
+      busyLine: st.busy + (st.busy === 1 ? " photograph is being made ready…" : " photographs are being made ready…"),
+      fileRef: el => { this.file = el; },
+      openPicker: () => { if (this.file) this.file.click(); },
+      onFiles: e => { this.addFiles(e.target.files); e.target.value = ""; },
+      onDrop: e => { e.preventDefault(); this.addFiles(e.dataTransfer && e.dataTransfer.files); },
+      onDragOver: e => { e.preventDefault(); },
+
+      saveLabel: mine ? (f && f.live ? "Save the gallery" : "Save the draft") : "Save the gallery",
+      liveLabel: f && f.live ? "Take off the site" : "Put it on the site",
+      onToggleLive: () => this.setState(s => ({ form: { ...s.form, live: !s.form.live } })),
+      onSave: () => this.save(),
+      onCancel: () => this.setState({ editing: false, editId: null, form: null, errName: "", errSub: "" })
+    };
+  }
+}
+</script>
+</body>
+</html>

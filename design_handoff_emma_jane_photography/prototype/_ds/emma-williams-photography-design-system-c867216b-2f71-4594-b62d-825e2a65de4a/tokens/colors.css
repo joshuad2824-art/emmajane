@@ -1,0 +1,25 @@
+:root{
+--pine-green:#31463c;
+--pine-green-dark:#20302a;
+--sage:#a8b3a4;
+--blue-gray:#7b8f9a;
+--warm-ivory:#f5f2ec;
+--slate:#444b4e;
+
+--color-bg:var(--warm-ivory);
+--color-bg-alt:color-mix(in oklch, var(--sage) 16%, var(--warm-ivory));
+--color-surface:#ffffff;
+--color-surface-paper:#faf7f1;
+--color-surface-sunken:color-mix(in oklch, var(--blue-gray) 20%, var(--warm-ivory));
+--color-text:var(--slate);
+--color-text-muted:color-mix(in srgb, var(--slate) 62%, var(--warm-ivory));
+--color-text-inverse:var(--warm-ivory);
+--color-accent:var(--pine-green);
+--color-accent-hover:var(--pine-green-dark);
+--color-accent-soft:color-mix(in oklch, var(--pine-green) 14%, var(--warm-ivory));
+--color-border:color-mix(in srgb, var(--slate) 20%, transparent);
+--color-border-soft:color-mix(in srgb, var(--slate) 10%, transparent);
+--color-line:color-mix(in srgb, var(--pine-green) 55%, transparent);
+--color-focus-ring:color-mix(in srgb, var(--pine-green) 45%, transparent);
+--color-overlay:color-mix(in srgb, var(--slate) 50%, transparent);
+}

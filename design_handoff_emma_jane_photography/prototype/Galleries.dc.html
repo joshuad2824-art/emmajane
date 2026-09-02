@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/effects.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/styles.css">
+<script src="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/_ds_bundle.js"></script>
+<script src="./cms.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--color-bg); }
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-hover); }
+  img { display: block; }
+  @media (max-width: 900px) {
+    nav { padding: 10px 18px !important; flex-wrap: wrap; justify-content: center !important; gap: 6px !important; }
+    nav > div { gap: 16px !important; flex-wrap: wrap; justify-content: center; }
+    header, section, footer { padding-left: 22px !important; padding-right: 22px !important; }
+    section { padding-top: 56px !important; padding-bottom: 64px !important; }
+    h1 { font-size: 2.7rem !important; }
+    h2 { font-size: 1.9rem !important; }
+    [data-mosaic] { grid-template-columns: repeat(2, 1fr) !important; }
+    [data-mosaic] > * { grid-column: auto !important; grid-row: auto !important; }
+    [data-albums] { grid-template-columns: 1fr !important; }
+    p { max-width: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overflow-x: hidden; min-height: 100vh;">
+
+  <nav style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 48px; background: color-mix(in srgb, var(--warm-ivory) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border-soft);">
+    <a href="Home.dc.html" style="display: block; flex-shrink: 0;"><img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 52px; width: auto;"></a>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <a href="Home.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Home</a>
+      <a href="Portfolio.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Portfolio</a>
+      <a href="Galleries.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-accent); padding-bottom: 4px;">Galleries</a>
+      <a href="Investment.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Investment</a>
+      <a href="About.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">About</a>
+      <a href="Contact.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Contact</a>
+    </div>
+  </nav>
+
+  <sc-if value="{{ onIndex }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Galleries index">
+    <header style="padding: 92px 48px 46px; max-width: 1180px; margin: 0 auto;">
+      <p style="margin: 0 0 18px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">collect beautiful moments</p>
+      <h1 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 4.25rem; line-height: var(--leading-tight); max-width: 22ch; text-wrap: balance;">Galleries</h1>
+      <p style="margin: 26px 0 0; max-width: 58ch; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text);">Collections I keep adding to — families in their own kitchens, seniors in the last hour of light, places I drive back to on purpose. If you are here for your own session, your gallery lives behind the link I sent you.</p>
+      <div style="margin-top: 34px;">
+        <a href="Client Gallery.dc.html" style="text-decoration: none;"><x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="secondary" size="lg" hint-size="220px,54px">Open a client gallery</x-import></a>
+      </div>
+    </header>
+
+    <section style="padding: 0 48px 110px; max-width: 1180px; margin: 0 auto;">
+      <div data-albums="" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px 40px;">
+        <sc-for list="{{ albumCards }}" as="a" hint-placeholder-count="3">
+          <a href="{{ a.href }}" style="text-decoration: none; color: inherit; display: block;">
+            <div style="overflow: hidden; background: var(--color-surface-sunken);">
+              <img src="{{ a.cover }}" alt="{{ a.name }}" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 640ms cubic-bezier(0.33, 0, 0.15, 1);" style-hover="transform: scale(1.03);">
+            </div>
+            <h2 style="margin: 22px 0 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h3); line-height: var(--leading-snug);">{{ a.name }}</h2>
+            <p style="margin: 8px 0 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">{{ a.meta }}</p>
+          </a>
+        </sc-for>
+      </div>
+      <sc-if value="{{ noAlbums }}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 0; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">Nothing published yet. Soon.</p>
+      </sc-if>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ onAlbum }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Album">
+    <header style="padding: 76px 48px 40px; max-width: 1180px; margin: 0 auto;">
+      <a href="{{ backHref }}" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; text-decoration: none; color: var(--color-text-muted);">← All galleries</a>
+      <h1 style="margin: 22px 0 0; font-family: var(--font-display); font-weight: 400; font-size: 4rem; line-height: var(--leading-tight); max-width: 24ch; text-wrap: balance;">{{ albumName }}</h1>
+      <p style="margin: 14px 0 0; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">{{ albumNote }}</p>
+    </header>
+
+    <section style="padding: 0 48px 110px; max-width: 1180px; margin: 0 auto;">
+      <div data-mosaic="" style="display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-flow: dense; gap: 10px;">
+        <sc-for list="{{ albumPhotos }}" as="p" hint-placeholder-count="6">
+          <figure style="margin: 0; grid-column: span {{ p.span }}; background: var(--color-surface-sunken); cursor: zoom-in;" onClick="{{ p.onOpen }}">
+            <img src="{{ p.src }}" alt="{{ p.cap }}" style="width: 100%; height: 100%; aspect-ratio: {{ p.ratio }}; object-fit: cover;">
+          </figure>
+        </sc-for>
+      </div>
+      <sc-if value="{{ hasCaps }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 10px;">
+        <sc-for list="{{ caps }}" as="c" hint-placeholder-count="2">
+          <p style="margin: 0; font-family: var(--font-hand); font-size: 1.25rem; color: var(--color-text-muted);">{{ c.cap }}</p>
+        </sc-for>
+      </div>
+      </sc-if>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ lightbox }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeBox }}" style="position: fixed; inset: 0; z-index: 60; background: color-mix(in srgb, var(--slate) 88%, transparent); display: flex; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out;">
+    <img src="{{ boxSrc }}" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(32,38,36,0.5);">
+  </div>
+  </sc-if>
+
+  <footer style="background: var(--pine-green); color: var(--color-text-inverse); padding: 72px 40px 40px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center;">
+    <img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 84px; width: auto; filter: brightness(0) invert(1); opacity: 0.92;">
+    <p style="margin: -8px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; opacity: 0.88;">collect beautiful moments</p>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: var(--text-small); letter-spacing: var(--tracking-wide);">
+      <a href="Home.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Home</a>
+      <a href="Portfolio.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Portfolio</a>
+      <a href="Investment.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Investment</a>
+      <a href="About.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">About</a>
+      <a href="Client Gallery.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Client galleries</a>
+    </div>
+    <span style="font-size: var(--text-eyebrow); opacity: 0.55; letter-spacing: var(--tracking-wide);">Tulsa, Oklahoma &amp; surrounding areas &middot; &copy; 2026 Emma Jane Photography</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { albums: [], srcs: {}, open: null, box: null };
+
+  componentDidMount() {
+    this.readHash();
+    window.addEventListener("hashchange", this.readHash = this.readHash.bind(this));
+    this.load();
+    this.esc = e => { if (e.key === "Escape") this.setState({ box: null }); };
+    document.addEventListener("keydown", this.esc);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("hashchange", this.readHash);
+    document.removeEventListener("keydown", this.esc);
+  }
+
+  readHash() {
+    const h = (location.hash || "").replace(/^#/, "");
+    this.setState({ open: h || null, box: null });
+  }
+
+  load() {
+    let tries = 0;
+    const go = () => {
+      if (!window.EJ) { if (++tries < 50) this.timer = setTimeout(go, 80); return; }
+      const albums = window.EJ.albums().filter(a => a.live);
+      this.setState({ albums });
+      const jobs = [];
+      albums.forEach(a => a.photos.forEach(p => {
+        const k = p.id || p.file;
+        if (!k) return;
+        jobs.push(window.EJ.srcOf(p, "web").then(u => ({ k, u })));
+      }));
+      Promise.all(jobs).then(rows => {
+        const srcs = {};
+        rows.forEach(r => { if (r.u) srcs[r.k] = r.u; });
+        this.setState({ srcs });
+      });
+    };
+    go();
+  }
+
+  src(p) {
+    if (!p) return "";
+    const k = p.id || p.file;
+    return this.state.srcs[k] || (p.file || "");
+  }
+
+  SPANS = [3, 3, 2, 2, 2, 4, 2, 3, 3, 2, 2, 2];
+  RATIOS = ["4 / 3", "4 / 5", "1 / 1", "3 / 4", "4 / 5", "16 / 9", "1 / 1", "3 / 2", "4 / 5", "4 / 5", "1 / 1", "3 / 4"];
+
+  renderVals() {
+    const st = this.state;
+    const cur = st.open ? st.albums.find(a => a.id === st.open) : null;
+
+    const albumCards = st.albums.map(a => ({
+      key: a.id,
+      href: "#" + a.id,
+      name: a.name,
+      cover: this.src(a.photos[a.cover] || a.photos[0]),
+      meta: a.photos.length + (a.photos.length === 1 ? " photograph" : " photographs") + (a.note ? " · " + a.note : "")
+    }));
+
+    const albumPhotos = cur ? cur.photos.map((p, i) => ({
+      key: (p.id || p.file) + i,
+      src: this.src(p),
+      cap: p.cap || cur.name,
+      span: this.SPANS[i % this.SPANS.length],
+      ratio: this.RATIOS[i % this.RATIOS.length],
+      onOpen: () => this.setState({ box: this.src(p) })
+    })) : [];
+
+    const caps = cur ? cur.photos.filter(p => p.cap).map((p, i) => ({ key: "c" + i, cap: p.cap })) : [];
+
+    return {
+      onIndex: !cur,
+      onAlbum: !!cur,
+      noAlbums: !cur && st.albums.length === 0,
+      albumCards,
+      backHref: location.pathname.split("/").pop(),
+      albumName: cur ? cur.name : "",
+      albumNote: cur ? (cur.note || "") : "",
+      albumPhotos,
+      caps, hasCaps: caps.length > 0,
+      lightbox: !!st.box,
+      boxSrc: st.box || "",
+      closeBox: () => this.setState({ box: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=La+Belle+Aurore&display=swap');
+:root{
+--font-display:"Cormorant Garamond",Georgia,serif;
+--font-body:"EB Garamond",Georgia,serif;
+--font-accent:"Cormorant Garamond",Georgia,serif;
+--font-hand:"La Belle Aurore","Cormorant Garamond",cursive;
+
+--text-eyebrow:0.8125rem;
+--text-small:1rem;
+--text-body:1.1875rem;
+--text-lede:1.4375rem;
+--text-h4:1.625rem;
+--text-h3:2.125rem;
+--text-h2:3rem;
+--text-h1:4.25rem;
+--text-display:6.5rem;
+
+--leading-tight:1.08;
+--leading-snug:1.25;
+--leading-normal:1.6;
+--leading-relaxed:1.85;
+
+--tracking-tight:-0.015em;
+--tracking-normal:0;
+--tracking-wide:0.06em;
+--tracking-wider:0.14em;
+--tracking-widest:0.24em;
+
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+}

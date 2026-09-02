@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/effects.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/styles.css">
+<script src="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/_ds_bundle.js"></script>
+<script src="./cms.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--color-bg); }
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-hover); }
+  img { display: block; }
+  @media (max-width: 900px) {
+    nav { padding: 10px 18px !important; flex-wrap: wrap; justify-content: center !important; gap: 6px !important; }
+    nav > div { gap: 16px !important; flex-wrap: wrap; justify-content: center; }
+    header, section, footer { padding-left: 22px !important; padding-right: 22px !important; }
+    section { padding-top: 48px !important; padding-bottom: 64px !important; }
+    h1 { font-size: 2.6rem !important; }
+    [data-split] { grid-template-columns: 1fr !important; gap: 40px !important; }
+    [data-grid] { grid-template-columns: repeat(2, 1fr) !important; }
+    p { max-width: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overflow-x: hidden; min-height: 100vh;">
+
+  <nav style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 48px; background: color-mix(in srgb, var(--warm-ivory) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border-soft);">
+    <a href="Home.dc.html" style="display: block; flex-shrink: 0;"><img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 52px; width: auto;"></a>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <a href="Home.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Home</a>
+      <a href="Portfolio.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Portfolio</a>
+      <a href="Galleries.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Galleries</a>
+      <a href="Investment.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Investment</a>
+      <a href="About.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">About</a>
+      <a href="Contact.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Contact</a>
+    </div>
+  </nav>
+
+  <sc-if value="{{ locked }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="Client gallery — locked" style="padding: 96px 48px 110px; max-width: 1180px; margin: 0 auto;">
+    <div data-split="" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 72px; align-items: start;">
+      <div>
+        <p style="margin: 0 0 18px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">your session, kept safe</p>
+        <h1 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 4.25rem; line-height: var(--leading-tight); max-width: 20ch; text-wrap: balance;">Your gallery is waiting</h1>
+        <p style="margin: 28px 0 0; max-width: 50ch; font-size: var(--text-body); line-height: var(--leading-relaxed);">I sent you a word along with your link. It opens your gallery and nothing else — no account to make, no password to remember. Everything in it is yours to download, full size, as many times as you like.</p>
+        <p style="margin: 20px 0 0; max-width: 50ch; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted);">If the word has gone missing, write to me and I will send it again. Galleries stay up for ninety days; tell me if you need longer and I will keep it open.</p>
+        <p style="margin: 30px 0 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">hello@emmajanephoto.com</p>
+      </div>
+
+      <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 40px 34px; box-shadow: var(--shadow-card);">
+        <h2 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4); line-height: var(--leading-snug);">The word I sent you</h2>
+        <div style="margin-top: 20px;" onKeyDown="{{ onCodeKey }}">
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" placeholder="e.g. goldenfield" value="{{ code }}" onChange="{{ onCode }}" hint-size="100%,48px"></x-import>
+        </div>
+        <p style="margin: 12px 0 0; min-height: 24px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-small); color: #7b4a3a;">{{ note }}</p>
+        <div style="margin-top: 14px;">
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="primary" size="lg" onClick="{{ tryOpen }}" hint-size="100%,54px">Open my gallery</x-import>
+        </div>
+        <p style="margin: 20px 0 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wide); color: var(--color-text-muted);">Capital letters do not matter. {{ demoHint }}</p>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ unlocked }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Client gallery">
+    <header style="padding: 76px 48px 34px; max-width: 1180px; margin: 0 auto;">
+      <p style="margin: 0 0 16px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">{{ shotLine }}</p>
+      <h1 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 4.25rem; line-height: var(--leading-tight);">{{ clientName }}</h1>
+      <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center;">
+        <span style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">{{ countLine }}</span>
+        <span style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);">{{ untilLine }}</span>
+        <button type="button" onClick="{{ close }}" style="background: none; border: 0; padding: 6px 0; cursor: pointer; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);" style-hover="color: var(--color-accent);">Close the gallery</button>
+      </div>
+      <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+        <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="primary" size="lg" onClick="{{ downloadAll }}" hint-size="230px,54px">Download every photograph</x-import>
+        <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="secondary" size="lg" onClick="{{ downloadKept }}" hint-size="200px,54px">{{ keptDownloadLabel }}</x-import>
+        <button type="button" onClick="{{ toggleOnlyKept }}" style="min-height: 54px; padding: 0 24px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: transparent; cursor: pointer; font-family: var(--font-body); font-size: var(--text-small); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text);" style-hover="border-color: var(--color-accent); color: var(--color-accent);">{{ filterLabel }}</button>
+        <button type="button" onClick="{{ share }}" style="background: none; border: 0; padding: 6px 4px; cursor: pointer; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);" style-hover="color: var(--color-accent);">Copy the link for family</button>
+      </div>
+      <p style="margin: 16px 0 0; min-height: 26px; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-accent);">{{ toast }}</p>
+    </header>
+
+    <section style="padding: 0 48px 60px; max-width: 1180px; margin: 0 auto;">
+      <div data-grid="" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px 26px;">
+        <sc-for list="{{ shown }}" as="p" hint-placeholder-count="6">
+          <figure style="margin: 0;">
+            <div style="background: var(--color-surface); padding: 10px; box-shadow: var(--shadow-frame); cursor: zoom-in;" onClick="{{ p.onOpen }}">
+              <img src="{{ p.src }}" alt="" style="width: 100%; aspect-ratio: 4 / 5; object-fit: cover;">
+            </div>
+            <figcaption style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;">
+              <button type="button" onClick="{{ p.onKeep }}" aria-pressed="{{ p.kept }}" style="min-height: 40px; padding: 0 14px; border-radius: var(--radius-sm); cursor: pointer; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; border: 1px solid {{ p.keepBd }}; background: {{ p.keepBg }}; color: {{ p.keepFg }};">{{ p.keepLabel }}</button>
+              <button type="button" onClick="{{ p.onDownload }}" style="min-height: 40px; padding: 0 6px; border: 0; background: none; cursor: pointer; font-family: var(--font-body); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-text-muted);" style-hover="color: var(--color-accent);">Download</button>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+      <sc-if value="{{ emptyKept }}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 0; font-family: var(--font-accent); font-style: italic; font-size: var(--text-lede); color: var(--color-text-muted);">Nothing marked yet. Plenty of time.</p>
+      </sc-if>
+    </section>
+
+    <section style="background: var(--color-bg-alt); padding: 68px 48px 76px;">
+      <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+        <p style="margin: 0; font-family: var(--font-hand); font-size: 1.5rem; line-height: 1.7; color: var(--color-text);">{{ clientNote }}</p>
+        <p style="margin: 26px 0 0; font-family: var(--font-hand); font-size: 1.8rem; color: var(--color-accent);">Emma</p>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ lightbox }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeBox }}" style="position: fixed; inset: 0; z-index: 60; background: color-mix(in srgb, var(--slate) 88%, transparent); display: flex; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out;">
+    <img src="{{ boxSrc }}" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 30px 80px rgba(32,38,36,0.5);">
+  </div>
+  </sc-if>
+
+  <footer style="background: var(--pine-green); color: var(--color-text-inverse); padding: 72px 40px 40px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center;">
+    <img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 84px; width: auto; filter: brightness(0) invert(1); opacity: 0.92;">
+    <p style="margin: -8px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; opacity: 0.88;">collect beautiful moments</p>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: var(--text-small); letter-spacing: var(--tracking-wide);">
+      <a href="Home.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Home</a>
+      <a href="Galleries.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Galleries</a>
+      <a href="Investment.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Investment</a>
+      <a href="About.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">About</a>
+      <a href="mailto:hello@emmajanephoto.com" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">hello@emmajanephoto.com</a>
+    </div>
+    <span style="font-size: var(--text-eyebrow); opacity: 0.55; letter-spacing: var(--tracking-wide);">Tulsa, Oklahoma &amp; surrounding areas &middot; &copy; 2026 Emma Jane Photography</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { list: [], code: "", note: "", openId: null, kept: {}, onlyKept: false, toast: "", srcs: {}, box: null };
+
+  componentDidMount() {
+    let tries = 0;
+    const go = () => {
+      if (!window.EJ) { if (++tries < 50) this.timer = setTimeout(go, 80); return; }
+      const list = window.EJ.clients();
+      this.setState({ list }, () => this.fromUrl(list));
+      const jobs = [];
+      list.forEach(c => c.photos.forEach(p => {
+        const k = p.id || p.file;
+        if (k) jobs.push(window.EJ.srcOf(p, "web").then(u => ({ k, u })));
+      }));
+      Promise.all(jobs).then(rows => {
+        const srcs = {};
+        rows.forEach(r => { if (r.u) srcs[r.k] = r.u; });
+        this.setState({ srcs });
+      });
+    };
+    go();
+    this.esc = e => { if (e.key === "Escape") this.setState({ box: null }); };
+    document.addEventListener("keydown", this.esc);
+  }
+  componentWillUnmount() {
+    if (this.timer) clearTimeout(this.timer);
+    if (this.t) clearTimeout(this.t);
+    document.removeEventListener("keydown", this.esc);
+  }
+
+  fromUrl(list) {
+    const q = new URLSearchParams(location.search);
+    const key = (q.get("g") || (location.hash || "").replace(/^#/, "")).trim().toLowerCase();
+    if (!key) return;
+    const hit = list.find(c => c.id.toLowerCase() === key || (c.code || "").toLowerCase() === key);
+    if (hit) this.setState({ openId: hit.id });
+  }
+
+  say(msg) {
+    this.setState({ toast: msg });
+    if (this.t) clearTimeout(this.t);
+    this.t = setTimeout(() => this.setState({ toast: "" }), 4200);
+  }
+
+  attempt() {
+    const v = this.state.code.trim().toLowerCase();
+    if (!v) { this.setState({ note: "I will need the word first." }); return; }
+    const hit = this.state.list.find(c => (c.code || "").toLowerCase() === v);
+    if (!hit) { this.setState({ note: "That one does not open anything — try the word from your email." }); return; }
+    this.setState({ openId: hit.id, note: "", code: "", kept: {}, onlyKept: false });
+    window.scrollTo(0, 0);
+  }
+
+  src(p) {
+    if (!p) return "";
+    const k = p.id || p.file;
+    return this.state.srcs[k] || (p.file || "");
+  }
+
+  grab(p, i, name) {
+    if (p.id && window.EJ) { window.EJ.download(p.id, name); return; }
+    const a = document.createElement("a");
+    a.href = this.src(p);
+    a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  bulk(items, label) {
+    if (!items.length) { this.say("Nothing marked to download yet."); return; }
+    this.say(label);
+    items.forEach((it, i) => setTimeout(() => this.grab(it.p, i, it.name), i * 700));
+  }
+
+  pretty(s) {
+    if (!s) return "";
+    const [y, m, d] = s.split("-").map(Number);
+    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    return months[m - 1] + " " + d + ", " + y;
+  }
+
+  renderVals() {
+    const st = this.state;
+    const cur = st.openId ? st.list.find(c => c.id === st.openId) : null;
+    const slug = cur ? cur.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "gallery";
+
+    const all = cur ? cur.photos.map((p, i) => {
+      const kept = !!st.kept[i];
+      const name = slug + "-" + String(i + 1).padStart(2, "0") + ".jpg";
+      return {
+        key: (p.id || p.file) + i,
+        src: this.src(p),
+        kept,
+        keepLabel: kept ? "Marked for print" : "Mark this one",
+        keepBg: kept ? "var(--pine-green)" : "transparent",
+        keepFg: kept ? "var(--color-text-inverse)" : "var(--color-text)",
+        keepBd: kept ? "var(--pine-green)" : "var(--color-border)",
+        onKeep: () => this.setState(s => ({ kept: { ...s.kept, [i]: !s.kept[i] } })),
+        onOpen: () => this.setState({ box: this.src(p) }),
+        onDownload: () => { this.grab(p, i, name); this.say("Downloading " + name + " — full size."); },
+        _p: p, _name: name
+      };
+    }) : [];
+
+    const keptItems = all.filter(x => x.kept).map(x => ({ p: x._p, name: x._name }));
+    const shown = st.onlyKept ? all.filter(x => x.kept) : all;
+    const n = all.length;
+    const demo = st.list.length ? "Try " + (st.list[0].code || "") + " to look around." : "";
+
+    return {
+      locked: !cur,
+      unlocked: !!cur,
+      code: st.code,
+      note: st.note,
+      demoHint: demo,
+      onCode: e => this.setState({ code: e.target.value, note: "" }),
+      onCodeKey: e => { if (e.key === "Enter") this.attempt(); },
+      tryOpen: () => this.attempt(),
+      clientName: cur ? cur.name : "",
+      clientNote: cur ? (cur.note || "") : "",
+      shotLine: cur && cur.shot ? "photographed " + this.pretty(cur.shot) : "your session",
+      countLine: n + (n === 1 ? " photograph" : " photographs"),
+      untilLine: cur && cur.until ? "here until " + this.pretty(cur.until) : "",
+      shown,
+      emptyKept: st.onlyKept && keptItems.length === 0,
+      filterLabel: st.onlyKept ? "Show all " + n : (keptItems.length ? "Show the " + keptItems.length + " marked" : "Show only marked"),
+      keptDownloadLabel: keptItems.length ? "Download the " + keptItems.length + " marked" : "Download the marked ones",
+      toggleOnlyKept: () => this.setState(s => ({ onlyKept: !s.onlyKept })),
+      downloadAll: () => this.bulk(all.map(x => ({ p: x._p, name: x._name })), "All " + n + " on their way — your browser may ask to allow several files."),
+      downloadKept: () => this.bulk(keptItems, keptItems.length + " on their way."),
+      share: () => {
+        const link = location.origin + location.pathname + "?g=" + (cur ? cur.code : "");
+        if (navigator.clipboard) navigator.clipboard.writeText(link).catch(() => {});
+        this.say("Link copied. It opens this gallery without the word.");
+      },
+      close: () => { this.setState({ openId: null, kept: {}, onlyKept: false, toast: "" }); window.scrollTo(0, 0); },
+      toast: st.toast,
+      lightbox: !!st.box,
+      boxSrc: st.box || "",
+      closeBox: () => this.setState({ box: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

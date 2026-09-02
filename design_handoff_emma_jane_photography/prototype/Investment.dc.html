@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/effects.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/styles.css">
+<script src="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/_ds_bundle.js"></script>
+<script src="./cms.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--color-bg); }
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-hover); }
+  img { display: block; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  @media (max-width: 900px) {
+    nav { padding: 10px 18px !important; flex-wrap: wrap; justify-content: center !important; gap: 6px !important; }
+    nav > div { gap: 16px !important; flex-wrap: wrap; justify-content: center; }
+    header, section, footer { padding-left: 22px !important; padding-right: 22px !important; }
+    section { padding-top: 64px !important; padding-bottom: 64px !important; }
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+    h1 { font-size: 2.7rem !important; }
+    h2 { font-size: 2.05rem !important; }
+    h3 { font-size: 1.45rem !important; }
+    p, li { max-width: none !important; }
+    article[style*="justify-content: space-between"] { flex-direction: column !important; align-items: flex-start !important; gap: 14px; }
+    summary { font-size: 1.35rem !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overflow-x: hidden;">
+
+  <nav style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 48px; background: color-mix(in srgb, var(--warm-ivory) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border-soft);">
+    <a href="Home.dc.html" style="display: block; flex-shrink: 0;"><img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 52px; width: auto;"></a>
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <a href="Home.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Home</a>
+      <a href="Portfolio.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Portfolio</a>
+      <a href="Galleries.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Galleries</a>
+      <a href="Investment.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-accent); padding-bottom: 4px;">Investment</a>
+      <a href="About.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">About</a>
+      <a href="Contact.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Contact</a>
+    </div>
+  </nav>
+
+  <header data-screen-label="Investment header" style="max-width: var(--content-narrow); margin: 0 auto; padding: 96px 40px 72px; text-align: center;">
+    <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.35rem;">investment</span>
+    <h1 style="margin: 12px 0 24px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h1); line-height: var(--leading-tight);">What a session costs</h1>
+    <p style="margin: 0; font-size: var(--text-lede); line-height: var(--leading-relaxed); text-wrap: pretty;">Sessions are booked by the hour, and the price covers both the time together and every edited, full-resolution image that comes out of it. No print packages, no per-file upgrades.</p>
+  </header>
+
+  <section data-screen-label="Sessions" style="max-width: var(--content-max); margin: 0 auto; padding: 0 40px 96px;">
+    <div style="margin-bottom: 48px;">
+      <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Divider" variant="flourish" label="Sessions" hint-size="100%,20px"></x-import>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+      <article style="background: var(--color-surface); border: 1px solid var(--color-border-soft); box-shadow: var(--shadow-card); border-radius: var(--radius-md); padding: 44px 34px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-accent);">30 minutes</span>
+        <p style="margin: 0; font-family: var(--font-display); font-size: 3.4rem; line-height: 1; color: var(--color-text);">$175</p>
+        <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">One location, one look. Made for young families, milestone minis and a quick set of headshots.</p>
+      </article>
+      <article style="background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-lifted); border-radius: var(--radius-md); padding: 44px 34px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-accent);">One hour · most booked</span>
+        <p style="margin: 0; font-family: var(--font-display); font-size: 3.4rem; line-height: 1; color: var(--color-text);">$225</p>
+        <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">Room for two locations or an outfit change. The right length for seniors, couples and families with school-age kids.</p>
+      </article>
+      <article style="background: var(--color-surface); border: 1px solid var(--color-border-soft); box-shadow: var(--shadow-card); border-radius: var(--radius-md); padding: 44px 34px; display: flex; flex-direction: column; gap: 18px;">
+        <span style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-accent);">Two hours</span>
+        <p style="margin: 0; font-family: var(--font-display); font-size: 3.4rem; line-height: 1; color: var(--color-text);">$400</p>
+        <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">Extended families, a full brand shoot for your shop, or a session that follows the light from afternoon into dusk.</p>
+      </article>
+    </div>
+  </section>
+
+  <section data-screen-label="Weddings" style="background: var(--color-bg-alt); padding: 104px 40px;">
+    <div style="max-width: var(--content-max); margin: 0 auto;">
+      <div style="margin-bottom: 48px;">
+        <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Divider" variant="flourish" label="Weddings" hint-size="100%,20px"></x-import>
+      </div>
+      <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center;">
+        <img src="photos/couple-canal.jpg" alt="A couple on their wedding day" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-sm); box-shadow: var(--shadow-card);">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <article style="background: var(--color-surface); border: 1px solid var(--color-border-soft); box-shadow: var(--shadow-card); border-radius: var(--radius-md); padding: 36px 34px; display: flex; align-items: baseline; justify-content: space-between; gap: 32px;">
+            <div>
+              <h3 style="margin: 0 0 8px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Full wedding day</h3>
+              <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 40ch; text-wrap: pretty;">Getting ready through the last dance — the whole day, start to finish.</p>
+            </div>
+            <p style="margin: 0; font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--color-accent); white-space: nowrap;">$1,200</p>
+          </article>
+          <article style="background: var(--color-surface); border: 1px solid var(--color-border-soft); box-shadow: var(--shadow-card); border-radius: var(--radius-md); padding: 36px 34px; display: flex; align-items: baseline; justify-content: space-between; gap: 32px;">
+            <div>
+              <h3 style="margin: 0 0 8px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Wedding day + engagement</h3>
+              <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 40ch; text-wrap: pretty;">Everything above, plus a one-hour engagement session before the day.</p>
+            </div>
+            <p style="margin: 0; font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--color-accent); white-space: nowrap;">$1,400</p>
+          </article>
+          <p style="margin: 6px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.15rem; color: var(--color-text-muted);">Dates are held with a signed agreement and a retainer; the rest is due the week of the wedding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="What's included" style="max-width: var(--content-max); margin: 0 auto; padding: 104px 40px;">
+    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: start;">
+      <div>
+        <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.3rem;">what's included</span>
+        <h2 style="margin: 12px 0 20px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h2); line-height: var(--leading-snug);">Every session, every time</h2>
+        <p style="margin: 0; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 40ch; text-wrap: pretty;">The number on the price list is the number you pay. The images are yours when they're ready.</p>
+      </div>
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0;">
+        <li style="display: flex; gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--color-border-soft);">
+          <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.1rem; min-width: 28px;">01</span>
+          <div>
+            <h3 style="margin: 0 0 6px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Every edited image, full resolution</h3>
+            <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">The best of every scene and pose. You get the whole edited gallery as high-resolution digital files.</p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--color-border-soft);">
+          <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.1rem; min-width: 28px;">02</span>
+          <div>
+            <h3 style="margin: 0 0 6px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">A print release</h3>
+            <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">Print them anywhere, at any size, as many times as you like. Business sessions include commercial use.</p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 22px; padding: 26px 0; border-bottom: 1px solid var(--color-border-soft);">
+          <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.1rem; min-width: 28px;">03</span>
+          <div>
+            <h3 style="margin: 0 0 6px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">An online gallery to share</h3>
+            <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">A private link for downloading and passing along to grandparents, delivered within three weeks.</p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 22px; padding: 26px 0;">
+          <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.1rem; min-width: 28px;">04</span>
+          <div>
+            <h3 style="margin: 0 0 6px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Help before we shoot</h3>
+            <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">Location ideas, what-to-wear notes, and an honest opinion on the timing if you ask for one.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section data-screen-label="Process" style="background: var(--color-bg-alt); padding: 104px 40px;">
+    <div style="max-width: var(--content-max); margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.3rem;">how it works</span>
+        <h2 style="margin: 10px 0 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h2); line-height: var(--leading-snug);">Four steps, no surprises</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;">
+        <div style="text-align: center;">
+          <p style="margin: 0 0 14px; font-family: var(--font-display); font-size: 2.4rem; color: var(--color-accent); line-height: 1;">I</p>
+          <h3 style="margin: 0 0 10px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Say hello</h3>
+          <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted);">Tell me who's coming and roughly when. I'll write back with open dates.</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="margin: 0 0 14px; font-family: var(--font-display); font-size: 2.4rem; color: var(--color-accent); line-height: 1;">II</p>
+          <h3 style="margin: 0 0 10px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Hold the time</h3>
+          <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted);">A short agreement and a retainer put your slot on the calendar.</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="margin: 0 0 14px; font-family: var(--font-display); font-size: 2.4rem; color: var(--color-accent); line-height: 1;">III</p>
+          <h3 style="margin: 0 0 10px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">The session</h3>
+          <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted);">We walk, we talk, I photograph. Very little standing still and smiling.</p>
+        </div>
+        <div style="text-align: center;">
+          <p style="margin: 0 0 14px; font-family: var(--font-display); font-size: 2.4rem; color: var(--color-accent); line-height: 1;">IV</p>
+          <h3 style="margin: 0 0 10px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Your gallery</h3>
+          <p style="margin: 0; font-size: var(--text-small); line-height: var(--leading-relaxed); color: var(--color-text-muted);">Edited, full-resolution files in your inbox within three weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="FAQ" style="max-width: var(--content-narrow); margin: 0 auto; padding: 104px 40px;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.3rem;">good questions</span>
+      <h2 style="margin: 10px 0 0; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h2); line-height: var(--leading-snug);">Before you ask</h2>
+    </div>
+    <details style="border-bottom: 1px solid var(--color-border-soft);">
+      <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; font-family: var(--font-display); font-size: var(--text-h4); font-weight: 400; color: var(--color-text);">How far will you travel?<span class="faq-plus" style="color: var(--color-accent); font-size: 1.4rem; line-height: 1; transition: transform 320ms cubic-bezier(.22,.61,.36,1);">+</span></summary>
+      <p style="margin: 0; padding: 0 0 26px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 58ch; text-wrap: pretty;">Anywhere inside about an hour of Tulsa at no extra charge — Broken Arrow, Jenks, Bixby, Owasso, Sand Springs, Claremore. Further than that, ask me and I'll quote the drive honestly.</p>
+    </details>
+    <details style="border-bottom: 1px solid var(--color-border-soft);">
+      <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; font-family: var(--font-display); font-size: var(--text-h4); font-weight: 400; color: var(--color-text);">How many photos will we get?<span class="faq-plus" style="color: var(--color-accent); font-size: 1.4rem; line-height: 1; transition: transform 320ms cubic-bezier(.22,.61,.36,1);">+</span></summary>
+      <p style="margin: 0; padding: 0 0 26px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 58ch; text-wrap: pretty;">Every frame worth keeping, edited. A thirty-minute session usually lands somewhere around thirty to fifty images; a full wedding day runs into the hundreds. I don't hold any back.</p>
+    </details>
+    <details style="border-bottom: 1px solid var(--color-border-soft);">
+      <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; font-family: var(--font-display); font-size: var(--text-h4); font-weight: 400; color: var(--color-text);">When is the best time of day?<span class="faq-plus" style="color: var(--color-accent); font-size: 1.4rem; line-height: 1; transition: transform 320ms cubic-bezier(.22,.61,.36,1);">+</span></summary>
+      <p style="margin: 0; padding: 0 0 26px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 58ch; text-wrap: pretty;">The last two hours before sunset, almost always. With small children, early morning is often the kinder choice — we'll pick the one that suits your family, not my portfolio.</p>
+    </details>
+    <details style="border-bottom: 1px solid var(--color-border-soft);">
+      <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; font-family: var(--font-display); font-size: var(--text-h4); font-weight: 400; color: var(--color-text);">What if it rains?<span class="faq-plus" style="color: var(--color-accent); font-size: 1.4rem; line-height: 1; transition: transform 320ms cubic-bezier(.22,.61,.36,1);">+</span></summary>
+      <p style="margin: 0; padding: 0 0 26px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 58ch; text-wrap: pretty;">Oklahoma weather gets one free reschedule, no questions and no fee. Overcast light is lovely, though — we only move for real storms.</p>
+    </details>
+    <details>
+      <summary style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 0; font-family: var(--font-display); font-size: var(--text-h4); font-weight: 400; color: var(--color-text);">Can we use the images for our business?<span class="faq-plus" style="color: var(--color-accent); font-size: 1.4rem; line-height: 1; transition: transform 320ms cubic-bezier(.22,.61,.36,1);">+</span></summary>
+      <p style="margin: 0; padding: 0 0 26px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 58ch; text-wrap: pretty;">Yes — brand and social sessions come with a commercial release covering your website, your ads and your channels. Just tell me at booking what you're planning.</p>
+    </details>
+  </section>
+
+  <section data-screen-label="CTA" style="background: var(--pine-green); color: var(--color-text-inverse); padding: 104px 40px; text-align: center;">
+    <span style="font-family: var(--font-accent); font-style: italic; font-size: 1.3rem; opacity: 0.85;">dates go quickly in the fall</span>
+    <h2 style="margin: 12px auto 28px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h2); line-height: var(--leading-snug); max-width: 18ch;">Tell me what you have in mind</h2>
+    <a href="Contact.dc.html" style="text-decoration: none; display: inline-flex;"><span style="display: inline-flex; align-items: center; padding: 16px 36px; border: 1px solid rgba(245,242,236,0.8); border-radius: var(--radius-md); color: var(--color-text-inverse); font-size: var(--text-body); letter-spacing: var(--tracking-wider); text-transform: uppercase;" style-hover="background: rgba(245,242,236,0.14);">Inquire about your date</span></a>
+  </section>
+
+  <footer style="background: var(--pine-green); color: var(--color-text-inverse); padding: 24px 40px 40px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; border-top: 1px solid rgba(245,242,236,0.14);">
+    <img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 84px; width: auto; filter: brightness(0) invert(1); opacity: 0.92;">
+    <p style="margin: -8px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; opacity: 0.88;">collect beautiful moments</p>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: var(--text-small); letter-spacing: var(--tracking-wide);">
+      <a href="Home.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Home</a>
+      <a href="Portfolio.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Portfolio</a>
+      <a href="About.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">About</a>
+      <a href="Contact.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Contact</a>
+      <a href="Galleries.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Galleries</a>
+      <a href="Client Gallery.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Client galleries</a>
+      <a href="mailto:hello@emmajanephoto.com" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">hello@emmajanephoto.com</a>
+    </div>
+    <span style="font-size: var(--text-eyebrow); opacity: 0.55; letter-spacing: var(--tracking-wide);">Tulsa, Oklahoma &amp; surrounding areas · © 2026 Emma Jane Photography</span>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

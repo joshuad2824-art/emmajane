@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/effects.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/styles.css">
+<script src="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/_ds_bundle.js"></script>
+<script src="./cms.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--color-bg); }
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-hover); }
+  img { display: block; }
+  @media (max-width: 900px) {
+    nav { padding: 10px 18px !important; flex-wrap: wrap; justify-content: center !important; gap: 6px !important; }
+    nav > div { gap: 16px !important; flex-wrap: wrap; justify-content: center; }
+    header, section, footer { padding-left: 22px !important; padding-right: 22px !important; }
+    section { padding-top: 64px !important; padding-bottom: 64px !important; }
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+    h1 { font-size: 2.7rem !important; }
+    h2 { font-size: 2.05rem !important; }
+    h3 { font-size: 1.45rem !important; }
+    p, li { max-width: none !important; }
+    img[style*="margin-top"] { margin-top: 0 !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overflow-x: hidden;">
+
+  <nav style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 48px; background: color-mix(in srgb, var(--warm-ivory) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border-soft);">
+    <a href="Home.dc.html" style="display: block; flex-shrink: 0;"><img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 52px; width: auto;"></a>
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <a href="Home.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Home</a>
+      <a href="Portfolio.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Portfolio</a>
+      <a href="Galleries.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Galleries</a>
+      <a href="Investment.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Investment</a>
+      <a href="About.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-accent); padding-bottom: 4px;">About</a>
+      <a href="Contact.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Contact</a>
+    </div>
+  </nav>
+
+  <section data-screen-label="About hero" style="max-width: var(--content-max); margin: 0 auto; padding: 96px 40px 104px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 88px; align-items: center;">
+    <div style="display: flex; justify-content: center;">
+      <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.ArchFrame" src="photos/emma-portrait.jpg" alt="Emma Jane" width="100%" aspect-ratio="3/4" matted="{{ true }}" hint-size="100%,480px"></x-import>
+    </div>
+    <div>
+      <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.35rem;">about</span>
+      <h1 style="margin: 12px 0 28px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h1); line-height: var(--leading-tight);">I'm Emma Jane</h1>
+      <p style="margin: 0 0 20px; font-size: var(--text-lede); line-height: var(--leading-relaxed); max-width: 52ch; text-wrap: pretty;">I've lived in and around Tulsa most of my life, and I still think the best thing about it is the light at the end of a summer day — the way it comes sideways across a field off Route 66 and makes everybody look like they're remembering something.</p>
+      <p style="margin: 0 0 20px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 52ch; text-wrap: pretty;">Lifestyle photography is just a way of saying I'd rather photograph what's happening than arrange it. I'll give you something to do instead of somewhere to look. Walk that way, tell him what you were laughing about earlier, pick her up if she asks. The pictures come out of that.</p>
+      <p style="margin: 0 0 36px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); max-width: 52ch; text-wrap: pretty;">Families, seniors, weddings, and the small shops that keep this town interesting — those are my people.</p>
+      <a href="Contact.dc.html" style="text-decoration: none;"><x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" variant="primary" hint-size="200px,46px">Say hello</x-import></a>
+    </div>
+  </section>
+
+  <section data-screen-label="Note strip" style="background: var(--color-bg-alt); padding: 96px 40px;">
+    <div style="max-width: var(--content-max); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; align-items: center;">
+      <img src="photos/senior-golden.jpg" alt="A session at the end of the day" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-sm); box-shadow: var(--shadow-card);">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 40px; text-align: center;">
+        <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.NoteCard" pin="tack" rotate="2" width="240" hint-size="240px,170px">real days, softly kept</x-import>
+        <p style="margin: 0; font-family: var(--font-accent); font-style: italic; font-size: 1.35rem; color: var(--color-accent); line-height: var(--leading-snug); max-width: 26ch;">The photograph you keep is almost never the one you posed for.</p>
+      </div>
+      <img src="photos/family-beach.jpg" alt="A family at the end of the day" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-sm); box-shadow: var(--shadow-card); margin-top: 56px;">
+    </div>
+  </section>
+
+  <section data-screen-label="A few true things" style="max-width: var(--content-max); margin: 0 auto; padding: 104px 40px;">
+    <div style="margin-bottom: 56px;">
+      <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Divider" variant="flourish" label="A Few True Things" hint-size="100%,20px"></x-import>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px;">
+      <div>
+        <h3 style="margin: 0 0 12px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">Kids can be kids</h3>
+        <p style="margin: 0; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">Nobody has to sit still or say cheese. If a session turns into a game of chase, that's usually when the good ones happen.</p>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 12px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">You will not be posed to death</h3>
+        <p style="margin: 0; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">I'll direct enough that you never feel stranded, and then get out of the way. Most people relax about ten minutes in.</p>
+      </div>
+      <div>
+        <h3 style="margin: 0 0 12px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h4);">You keep everything</h3>
+        <p style="margin: 0; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted); text-wrap: pretty;">Full-resolution edited files and a print release with every session. I'd rather your photos live on a wall than in my portfolio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="CTA" style="background: var(--pine-green); color: var(--color-text-inverse); padding: 104px 40px; text-align: center;">
+    <span style="font-family: var(--font-accent); font-style: italic; font-size: 1.3rem; opacity: 0.85;">say hello</span>
+    <h2 style="margin: 12px auto 28px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h2); line-height: var(--leading-snug); max-width: 20ch;">I'd love to hear what you're planning</h2>
+    <a href="Contact.dc.html" style="text-decoration: none; display: inline-flex;"><span style="display: inline-flex; align-items: center; padding: 16px 36px; border: 1px solid rgba(245,242,236,0.8); border-radius: var(--radius-md); color: var(--color-text-inverse); font-size: var(--text-body); letter-spacing: var(--tracking-wider); text-transform: uppercase;" style-hover="background: rgba(245,242,236,0.14);">Start a conversation</span></a>
+  </section>
+
+  <footer style="background: var(--pine-green); color: var(--color-text-inverse); padding: 24px 40px 40px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; border-top: 1px solid rgba(245,242,236,0.14);">
+    <img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 84px; width: auto; filter: brightness(0) invert(1); opacity: 0.92;">
+    <p style="margin: -8px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; opacity: 0.88;">collect beautiful moments</p>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: var(--text-small); letter-spacing: var(--tracking-wide);">
+      <a href="Home.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Home</a>
+      <a href="Portfolio.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Portfolio</a>
+      <a href="Investment.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Investment</a>
+      <a href="Contact.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Contact</a>
+      <a href="Galleries.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Galleries</a>
+      <a href="Client Gallery.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Client galleries</a>
+      <a href="mailto:hello@emmajanephoto.com" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">hello@emmajanephoto.com</a>
+    </div>
+    <span style="font-size: var(--text-eyebrow); opacity: 0.55; letter-spacing: var(--tracking-wide);">Tulsa, Oklahoma &amp; surrounding areas &middot; &copy; 2026 Emma Jane Photography</span>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

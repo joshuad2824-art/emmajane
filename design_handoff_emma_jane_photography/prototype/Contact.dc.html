@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/colors.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/typography.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/tokens/effects.css">
+<link rel="stylesheet" href="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/styles.css">
+<script src="_ds/emma-williams-photography-design-system-c867216b-2f71-4594-b62d-825e2a65de4a/_ds_bundle.js"></script>
+<script src="./cms.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--color-bg); }
+  * { box-sizing: border-box; }
+  a { color: var(--color-accent); }
+  a:hover { color: var(--color-accent-hover); }
+  img { display: block; }
+  @media (max-width: 900px) {
+    nav { padding: 10px 18px !important; flex-wrap: wrap; justify-content: center !important; gap: 6px !important; }
+    nav > div { gap: 16px !important; flex-wrap: wrap; justify-content: center; }
+    header, section, footer { padding-left: 22px !important; padding-right: 22px !important; }
+    section { padding-top: 56px !important; padding-bottom: 64px !important; }
+    [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 48px !important; }
+    h1 { font-size: 2.7rem !important; }
+    h2 { font-size: 2.05rem !important; }
+    p, li { max-width: none !important; }
+    form > div[style*="display: flex"] { flex-direction: column !important; gap: 22px !important; }
+  }
+</style>
+</helmet>
+
+<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <nav style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 10px 48px; background: color-mix(in srgb, var(--warm-ivory) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-border-soft);">
+    <a href="Home.dc.html" style="display: block; flex-shrink: 0;"><img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 52px; width: auto;"></a>
+    <div style="display: flex; gap: 24px; align-items: center;">
+      <a href="Home.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Home</a>
+      <a href="Portfolio.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Portfolio</a>
+      <a href="Galleries.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Galleries</a>
+      <a href="Investment.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">Investment</a>
+      <a href="About.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-text); border-bottom: 1px solid transparent; padding-bottom: 4px;" style-hover="border-bottom: 1px solid var(--color-line);">About</a>
+      <a href="Contact.dc.html" style="font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; text-decoration: none; color: var(--color-accent); border-bottom: 1px solid var(--color-accent); padding-bottom: 4px;">Contact</a>
+    </div>
+  </nav>
+
+  <section data-screen-label="Contact" style="flex: 1; max-width: var(--content-max); margin: 0 auto; width: 100%; padding: 88px 40px 104px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: start;">
+    <div>
+      <span style="font-family: var(--font-accent); font-style: italic; color: var(--color-accent); font-size: 1.35rem;">say hello</span>
+      <h1 style="margin: 12px 0 24px; font-family: var(--font-display); font-weight: 400; font-size: var(--text-h1); line-height: var(--leading-tight);">Let's tell your story</h1>
+      <p style="margin: 0 0 44px; font-size: var(--text-lede); line-height: var(--leading-relaxed); color: var(--color-text); max-width: 48ch; text-wrap: pretty;">Tell me who's coming, roughly when, and where you had in mind. I answer every note within a couple of days — usually with a few date options and an honest suggestion about timing.</p>
+
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 26px; max-width: 560px;">
+          <div style="display: flex; gap: 22px;">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="Your name" placeholder="Jane Whitaker" hint-size="100%,74px"></x-import>
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="Email" type="email" placeholder="you@email.com" hint-size="100%,74px"></x-import>
+          </div>
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Select" label="What are we photographing?" options="{{ sessionOptions }}" hint-size="100%,74px"></x-import>
+          <div style="display: flex; gap: 22px;">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="Date you have in mind" type="date" hint-size="100%,74px"></x-import>
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Input" label="Where" placeholder="Tulsa, Bixby, somewhere else…" hint-size="100%,74px"></x-import>
+          </div>
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Textarea" label="Tell me a little more" rows="5" placeholder="Who's in the photos, what the day looks like, anything you're hoping for…" hint-size="100%,160px"></x-import>
+          <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Checkbox" label="Send me a note when fall dates open" checked="{{ optIn }}" onChange="{{ toggleOptIn }}" hint-size="100%,26px"></x-import>
+          <div style="margin-top: 6px;">
+            <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.Button" type="submit" variant="primary" size="lg" hint-size="200px,54px">Send your note</x-import>
+          </div>
+          <p style="margin: 0; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-wide); color: var(--color-text-muted);">Demo form — nothing is sent anywhere yet.</p>
+        </form>
+      </sc-if>
+
+      <sc-if value="{{ sent }}">
+        <div style="max-width: 560px; padding: 48px 40px; background: var(--color-bg-alt); border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); text-align: center;">
+          <p style="margin: 0 0 12px; font-family: var(--font-accent); font-style: italic; font-size: 1.6rem; color: var(--color-accent);">Thank you — your note is on its way.</p>
+          <p style="margin: 0 0 28px; font-size: var(--text-body); line-height: var(--leading-relaxed); color: var(--color-text-muted);">I'll write back within a couple of days with open dates. In the meantime, the fastest way to reach me is hello@emmajanephoto.com.</p>
+          <button onClick="{{ reset }}" style="font-family: var(--font-body); font-size: var(--text-small); letter-spacing: var(--tracking-wider); text-transform: uppercase; color: var(--color-accent); background: transparent; border: 1px solid var(--color-accent); border-radius: var(--radius-md); padding: 12px 26px; cursor: pointer;" style-hover="background: var(--color-accent); color: var(--color-text-inverse);">Send another</button>
+        </div>
+      </sc-if>
+    </div>
+
+    <aside style="display: flex; flex-direction: column; gap: 32px;">
+      <img src="photos/senior-bridge.jpg" alt="A session in the last of the light" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-sm); box-shadow: var(--shadow-card);">
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <div>
+          <p style="margin: 0 0 4px; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-text-muted);">Email</p>
+          <a href="mailto:hello@emmajanephoto.com" style="font-size: var(--text-body); color: var(--color-accent); text-decoration: none;">hello@emmajanephoto.com</a>
+        </div>
+        <div>
+          <p style="margin: 0 0 4px; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-text-muted);">Instagram</p>
+          <p style="margin: 0; font-size: var(--text-body); color: var(--color-text);">@emmajanephoto</p>
+        </div>
+        <div>
+          <p style="margin: 0 0 4px; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-text-muted);">Where</p>
+          <p style="margin: 0; font-size: var(--text-body); line-height: var(--leading-normal); color: var(--color-text);">Tulsa, Oklahoma — and an hour in every direction.</p>
+        </div>
+        <div>
+          <p style="margin: 0 0 4px; font-size: var(--text-eyebrow); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--color-text-muted);">Sessions</p>
+          <p style="margin: 0; font-size: var(--text-body); line-height: var(--leading-normal); color: var(--color-text);">From $175 for thirty minutes. <a href="Investment.dc.html" style="color: var(--color-accent);">See the full list</a>.</p>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; padding-top: 8px;">
+        <x-import component-from-global-scope="EmmaWilliamsPhotographyDesignSystem_c86721.NoteCard" pin="tape" rotate="-2" width="230" hint-size="230px,150px">no such thing as too many questions</x-import>
+      </div>
+    </aside>
+  </section>
+
+  <footer style="background: var(--pine-green); color: var(--color-text-inverse); padding: 72px 40px 40px; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center;">
+    <img src="brand/emma-jane-logo.png" alt="Emma Jane Photography" data-ej-skip="" style="height: 84px; width: auto; filter: brightness(0) invert(1); opacity: 0.92;">
+    <p style="margin: -8px 0 0; font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; opacity: 0.88;">collect beautiful moments</p>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: var(--text-small); letter-spacing: var(--tracking-wide);">
+      <a href="Home.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Home</a>
+      <a href="Portfolio.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Portfolio</a>
+      <a href="Investment.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Investment</a>
+      <a href="About.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">About</a>
+      <a href="Galleries.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Galleries</a>
+      <a href="Client Gallery.dc.html" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">Client galleries</a>
+      <a href="mailto:hello@emmajanephoto.com" style="color: var(--color-text-inverse); text-decoration: none; opacity: 0.85;">hello@emmajanephoto.com</a>
+    </div>
+    <span style="font-size: var(--text-eyebrow); opacity: 0.55; letter-spacing: var(--tracking-wide);">Tulsa, Oklahoma &amp; surrounding areas &middot; &copy; 2026 Emma Jane Photography</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sent: false, optIn: false };
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      optIn: this.state.optIn,
+      sessionOptions: ['A family session', 'Senior portraits', 'A wedding', 'Engagement session', 'Business / brand photos', 'Something else'],
+      toggleOptIn: () => this.setState(s => ({ optIn: !s.optIn })),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      reset: () => this.setState({ sent: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
