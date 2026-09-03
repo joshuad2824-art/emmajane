@@ -2,7 +2,7 @@
 #
 # `app` must match the app you created in Fly (`fly apps list`). If it differs, change it here —
 # or run `fly launch --no-deploy` once and let Fly rewrite this file.
-app = "emmajane"
+app = "emmajanephotography"
 primary_region = "dfw"
 
 [build]
