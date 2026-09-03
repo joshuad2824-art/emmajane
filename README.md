@@ -45,21 +45,21 @@ live in the bucket, never on the machine — the machine is disposable.
 
 ```bash
 # 1. The app. If you already created one in the Fly dashboard, put its name in fly.toml instead.
-fly launch --no-deploy --copy-config --name emmajane --region dfw
+fly launch --no-deploy --copy-config --name emmajanephotography --region dfw
 
 # 2. Postgres — attaching sets DATABASE_URL on the app for you.
 fly postgres create --name emmajane-db --region dfw --vm-size shared-cpu-1x --volume-size 1
-fly postgres attach emmajane-db --app emmajane
+fly postgres attach emmajane-db --app emmajanephotography
 
 # 3. Object storage — Tigris sets BUCKET_NAME + AWS_* on the app for you.
-fly storage create --app emmajane
+fly storage create --app emmajanephotography
 
 # 4. Secrets the app needs.
-fly secrets set --app emmajane \
+fly secrets set --app emmajanephotography \
   SESSION_SECRET="$(openssl rand -hex 32)" \
   ADMIN_PASSWORD="<Emma's studio password, 10+ characters>" \
   ADMIN_EMAIL="hello@emmajanephoto.com" \
-  SITE_URL="https://emmajane.fly.dev"
+  SITE_URL="https://emmajanephotography.fly.dev"
 
 # 5. First deploy.
 fly deploy
@@ -75,7 +75,7 @@ gallery opens. When the custom domain is attached (`fly certs add emmajanephoto.
 repository secret, **`FLY_API_TOKEN`**:
 
 ```bash
-fly tokens create deploy --app emmajane -x 999999h
+fly tokens create deploy --app emmajanephotography -x 999999h
 ```
 
 Paste the output into GitHub → Settings → Secrets and variables → Actions → New repository secret.
