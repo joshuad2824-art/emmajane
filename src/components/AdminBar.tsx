@@ -33,8 +33,10 @@ export function AdminBar() {
         router.refresh();
       } else if (res.status === 429) {
         setErr("Too many tries. Give it a few minutes.");
-      } else {
+      } else if (res.status === 401) {
         setErr("That isn't it.");
+      } else {
+        setErr((await res.json().catch(() => ({}))).error || "Something went wrong on the site's side.");
       }
     } catch {
       setErr("Could not reach the site just now.");

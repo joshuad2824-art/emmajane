@@ -12,8 +12,14 @@ const migrationsDir = path.join(here, "..", "db", "migrations");
 
 const url = process.env.DATABASE_URL;
 if (!url) {
-  console.error("DATABASE_URL is not set. On Fly: `fly postgres attach <db-app>` or `fly secrets set DATABASE_URL=...`.");
-  process.exit(1);
+  // Let the site come up with its compiled-in content so the deploy succeeds; the Studio and
+  // galleries stay unavailable until a database is attached.
+  console.warn("=".repeat(78));
+  console.warn("DATABASE_URL is not set — skipping migrations. The site will serve its built-in copy,");
+  console.warn("but signing in, galleries and the contact form will not work until Postgres is attached:");
+  console.warn("  fly postgres attach <db-app> --app emmajanephotography");
+  console.warn("=".repeat(78));
+  process.exit(0);
 }
 
 const pool = new pg.Pool({ connectionString: url, ssl: sslFor(url), max: 2 });
