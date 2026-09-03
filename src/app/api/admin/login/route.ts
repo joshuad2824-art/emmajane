@@ -8,7 +8,15 @@ export const POST = handler(async (req: Request) => {
   if (!limit.ok) return fail(429, `Too many attempts. Try again in ${Math.ceil(limit.retryAfterSec / 60)} minutes.`);
   const body = await readJson<{ password?: unknown }>(req);
   const password = str(body.password, 200);
-  const admin = password ? await verifyAdminPassword(password) : null;
+  let admin = null;
+  try {
+    admin = password ? await verifyAdminPassword(password) : null;
+  } catch (e) {
+    if (/DATABASE_URL|ECONNREFUSED|ENOTFOUND|does not exist/.test((e as Error).message)) {
+      return fail(503, "The site's database is not connected yet — finish the Fly setup first.");
+    }
+    throw e;
+  }
   if (!admin) {
     // A small, growing delay on failures makes brute force slower still.
     await new Promise((r) => setTimeout(r, 400));

@@ -83,8 +83,10 @@ Pull requests run `.github/workflows/ci.yml` (typecheck + build) instead of depl
 
 ### Checking the deployment
 
-- `https://<app>.fly.dev/api/health` → `{"ok":true,"db":"ok","storage":"s3"}`. If `storage` says
-  `local`, the bucket is not attached and uploads will vanish on the next deploy.
+- `https://<app>.fly.dev/api/health` → `{"ok":true,"db":"ok","storage":"s3"}`. If `db` starts with
+  `error`, Postgres is not attached yet — the marketing pages still render from their built-in
+  copy, but signing in, galleries and the contact form will not work. If `storage` says `local`,
+  the bucket is not attached and uploads will vanish on the next deploy.
 - `fly logs` shows `migrate: created the admin account …` on the first boot.
 - Sign in at the bottom of any page with `ADMIN_PASSWORD`, then open **Galleries** in the bar.
 
