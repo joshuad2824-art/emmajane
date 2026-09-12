@@ -21,6 +21,6 @@ export const env = {
   storageDir: process.env.STORAGE_DIR ?? ".storage",
   resendApiKey: process.env.RESEND_API_KEY ?? "",
   notifyEmail: process.env.NOTIFY_EMAIL ?? "",
-  fromEmail: process.env.FROM_EMAIL ?? "Emma Jane Photography <no-reply@emmajanephoto.com>",
+  fromEmail: process.env.FROM_EMAIL ?? "Emma Williams Photography <no-reply@emmajanephoto.com>",
   maxUploadBytes: 50 * 1024 * 1024,
 };

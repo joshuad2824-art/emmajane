@@ -16,9 +16,9 @@ export function Nav() {
   const isCurrent = (href: string) => (href === "/" ? path === "/" : path === href || path.startsWith(href + "/"));
   return (
     <nav className="nav" aria-label="Primary">
-      <Link href="/" className="nav__logo" aria-label="Emma Jane Photography — home">
+      <Link href="/" className="nav__logo" aria-label="Emma Williams Photography — home">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/emma-jane-logo.png" alt="Emma Jane Photography" />
+        <img src="/brand/emma-williams-signature.svg" alt="Emma Williams Photography" />
       </Link>
       <div className="nav__links">
         {LINKS.map((l) => (

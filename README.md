@@ -1,6 +1,6 @@
-# Emma Jane Photography
+# Emma Williams Photography
 
-The website, owner CMS and client-gallery platform for Emma Jane Photography (Tulsa, OK).
+The website, owner CMS and client-gallery platform for Emma Williams Photography (Tulsa, OK).
 Built from the design handoff in `design_handoff_emma_jane_photography/` — read its `README.md`
 for the design and `BACKEND.md` for the server-side spec this implements.
 

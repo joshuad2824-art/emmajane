@@ -1,8 +1,8 @@
 {
-  "name": "emma-jane-photography",
+  "name": "emma-williams-photography",
   "version": "1.0.0",
   "private": true,
-  "description": "Emma Jane Photography — marketing site, owner CMS, and client gallery platform",
+  "description": "Emma Williams Photography — marketing site, owner CMS, and client gallery platform",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

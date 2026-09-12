@@ -13,9 +13,9 @@ const laBelle = La_Belle_Aurore({ subsets: ["latin"], weight: "400", variable: "
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.siteUrl),
-  title: { default: "Emma Jane Photography", template: "%s · Emma Jane Photography" },
+  title: { default: "Emma Williams Photography", template: "%s · Emma Williams Photography" },
   description: "Lifestyle photography in Tulsa, Oklahoma — families, seniors, weddings and small-business sessions. Real days, real light, softly kept.",
-  openGraph: { siteName: "Emma Jane Photography", type: "website", images: ["/photos/senior-golden.jpg"] },
+  openGraph: { siteName: "Emma Williams Photography", type: "website", images: ["/photos/senior-golden.jpg"] },
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

@@ -27,7 +27,7 @@ export default async function StudioPage() {
       <Studio />
       <footer className="footer" style={{ padding: "60px 40px 34px", gap: 18 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/emma-jane-logo.png" alt="Emma Jane Photography" className="footer__logo" style={{ height: 64 }} />
+        <img src="/brand/emma-williams-signature.svg" alt="Emma Williams Photography" className="footer__logo" style={{ height: 64 }} />
         <span className="footer__fine">The studio · only you can see this page</span>
       </footer>
     </>

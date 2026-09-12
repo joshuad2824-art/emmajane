@@ -3,7 +3,7 @@ import { Editable, EditableImage } from "@/components/Editable";
 import { Footer } from "@/components/Footer";
 import { ArchFrame, Button, Divider, PhotoFrame, Quote } from "@/components/ui";
 
-export const metadata: Metadata = { title: "Emma Jane Photography · Tulsa lifestyle photographer" };
+export const metadata: Metadata = { title: "Emma Williams Photography · Tulsa lifestyle photographer" };
 
 const P = "home";
 

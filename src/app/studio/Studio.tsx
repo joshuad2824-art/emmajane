@@ -362,7 +362,7 @@ export function Studio() {
               </p>
               {n.message ? <p className="body" style={{ marginTop: 14, maxWidth: "70ch", whiteSpace: "pre-wrap" }}>{n.message}</p> : null}
               <div className="wrap-row" style={{ marginTop: 14, gap: 12 }}>
-                <a className="btn btn--secondary btn--sm" href={`mailto:${n.email}?subject=${encodeURIComponent("Your note to Emma Jane Photography")}`}>Write back</a>
+                <a className="btn btn--secondary btn--sm" href={`mailto:${n.email}?subject=${encodeURIComponent("Your note to Emma Williams Photography")}`}>Write back</a>
                 <button type="button" className="text-btn" onClick={() => markRead(n)}>{n.read_at ? "Mark as new" : "Mark as read"}</button>
               </div>
             </article>
