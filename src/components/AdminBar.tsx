@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { useAdmin } from "./AdminProvider";
+import { CONTENT_RESET_EVENT } from "./EditableImg";
 
 function pagePrefix(pathname: string): string {
   const seg = pathname.split("/").filter(Boolean)[0] ?? "";
@@ -56,6 +57,7 @@ export function AdminBar() {
     const res = await fetch(`/api/admin/content?prefix=${encodeURIComponent(pagePrefix(pathname) + ".")}`, { method: "DELETE" });
     if (res.ok) {
       toast("This page is back the way it was.");
+      window.dispatchEvent(new Event(CONTENT_RESET_EVENT));
       router.refresh();
     } else {
       toast("That did not work — try again.");

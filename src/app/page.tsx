@@ -13,8 +13,10 @@ export default function HomePage() {
       {/* Hero */}
       <header className="hero" style={{ position: "relative", height: "82vh", minHeight: 600, overflow: "hidden" }}>
         <EditableImage k={`${P}.hero.image`} src="/photos/senior-golden.jpg" alt="Golden hour portrait session outside Tulsa" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 34%" }} />
-        <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(49,70,60,0.10) 0%, rgba(49,70,60,0.06) 45%, rgba(49,70,60,0.52) 100%)" }} />
-        <div className="rise" style={{ position: "absolute", left: 0, right: 0, bottom: 72, display: "flex", flexDirection: "column", alignItems: "center", gap: 22, textAlign: "center", padding: "0 40px", color: "#fff" }}>
+        <div aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "linear-gradient(180deg, rgba(49,70,60,0.10) 0%, rgba(49,70,60,0.06) 45%, rgba(49,70,60,0.52) 100%)" }} />
+        {/* The gradient and this text block sit over the photograph; they let clicks through so the
+            photograph itself stays replaceable in edit mode, and only the words and buttons catch them. */}
+        <div className="rise hero__copy" style={{ position: "absolute", left: 0, right: 0, bottom: 72, display: "flex", flexDirection: "column", alignItems: "center", gap: 22, textAlign: "center", padding: "0 40px", color: "#fff", pointerEvents: "none" }}>
           <Editable k={`${P}.hero.eyebrow`} as="span" style={{ fontFamily: "var(--font-accent)", fontStyle: "italic", fontSize: "1.45rem", textShadow: "0 1px 18px rgba(32,48,42,0.45)" }}>real days, real light, softly kept</Editable>
           <Editable k={`${P}.hero.title`} as="h1" className="hero__title balance" style={{ fontSize: "4.75rem", lineHeight: "var(--leading-tight)", letterSpacing: "0.01em", maxWidth: "15ch", textShadow: "0 2px 28px rgba(32,48,42,0.4)" }}>Photographs that feel like the day itself</Editable>
           <div className="wrap-row" style={{ gap: 16, marginTop: 6, justifyContent: "center" }}>
