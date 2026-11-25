@@ -255,8 +255,10 @@ body.is-admin { padding-bottom: 72px; }
 [data-editable] { outline: 1px dashed color-mix(in srgb, #31463c 45%, transparent); outline-offset: 3px; border-radius: 2px; cursor: text; }
 [data-editable]:hover { outline: 1px dashed #31463c; background: color-mix(in srgb, #31463c 7%, transparent); }
 [data-editable]:focus { outline: 1px solid #31463c; background: color-mix(in srgb, #31463c 9%, transparent); }
-[data-pickable] { outline: 2px dashed color-mix(in srgb, #31463c 55%, transparent); outline-offset: 4px; cursor: pointer; }
-[data-pickable]:hover { outline: 2px solid #31463c; opacity: 0.86; }
+/* Drawn inside the photograph: arch frames and the hero clip anything outside it. */
+[data-pickable] { outline: 2px dashed rgba(255, 255, 255, 0.9); outline-offset: -10px; cursor: pointer; }
+[data-pickable]:hover { outline: 2px solid #fff; opacity: 0.86; }
+.hero__copy > * { pointer-events: auto; }
 
 /* ---------- Responsive (one breakpoint) ---------- */
 @media (max-width: 900px) {

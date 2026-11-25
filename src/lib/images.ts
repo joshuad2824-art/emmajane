@@ -22,6 +22,12 @@ function sniff(buf: Buffer): { mime: string; ext: string } | null {
   return null;
 }
 
+/** HEIF/HEIC (an ISO-BMFF `ftyp` box with a HEIF brand) — what iPhones save by default. */
+function isHeic(buf: Buffer) {
+  if (buf.length < 12 || buf.subarray(4, 8).toString("ascii") !== "ftyp") return false;
+  return /^(heic|heix|hevc|hevx|heim|heis|mif1|msf1)$/.test(buf.subarray(8, 12).toString("ascii"));
+}
+
 /**
  * Store an upload: validate, dedupe by hash, keep the original untouched, and generate
  * EXIF-stripped, orientation-corrected derivatives. Returns the photo row (existing or new).
@@ -30,7 +36,16 @@ export async function ingestPhoto(buf: Buffer, originalName: string): Promise<Ph
   if (buf.length === 0) throw new HttpError(400, "That file was empty.");
   if (buf.length > env.maxUploadBytes) throw new HttpError(413, "That file is over 50 MB.");
   const kind = sniff(buf);
-  if (!kind) throw new HttpError(415, "Only JPEG, PNG, WebP and TIFF photographs can be uploaded.");
+  if (!kind) {
+    if (isHeic(buf)) throw new HttpError(415, "That's an iPhone HEIC file. Export it as a JPEG (or AirDrop/email it, which converts it) and upload that.");
+    throw new HttpError(415, "Only JPEG, PNG, WebP and TIFF photographs can be uploaded.");
+  }
+
+  const store = storage();
+  if (store.kind === "local" && env.isProd && !process.env.STORAGE_DIR) {
+    // The machine's disk is wiped whenever Fly restarts it, so a photo saved there would vanish.
+    throw new HttpError(503, "Photo storage isn't connected yet, so photographs can't be saved. Run `fly storage create` for this app, then try again.");
+  }
 
   const hash = createHash("sha256").update(buf).digest("hex");
   const existing = await one<PhotoRow>(
@@ -49,7 +64,6 @@ export async function ingestPhoto(buf: Buffer, originalName: string): Promise<Ph
   const id = crypto.randomUUID();
   const dir = `photos/${id.slice(0, 2)}/${id}`;
   const originalKey = `${dir}/original.${kind.ext}`;
-  const store = storage();
 
   const derivatives: { size: string; key: string; width: number; height: number; bytes: number; buf: Buffer }[] = [];
   for (const v of VARIANTS) {
